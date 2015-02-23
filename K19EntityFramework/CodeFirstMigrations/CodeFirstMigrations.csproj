@@ -4,28 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E6862F0-8176-48B9-96CB-F64649CA0BBF}</ProjectGuid>
+    <ProjectGuid>{F9A04B54-2A41-40A6-AEE9-582571B74019}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EntityFramework</RootNamespace>
-    <AssemblyName>EntityFramework</AssemblyName>
+    <RootNamespace>CodeFirstMigrations</RootNamespace>
+    <AssemblyName>CodeFirstMigrations</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,11 +31,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
-  <PropertyGroup />
   <PropertyGroup>
-    <StartupObject>EntityFramework.ListaAluno</StartupObject>
+    <StartupObject>CodeFirstMigrations.CadastroEditora</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -69,43 +51,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlteraAluno.cs" />
-    <Compile Include="Aluno.cs" />
-    <Compile Include="Endereco.cs" />
-    <Compile Include="InsereAluno.cs" />
-    <Compile Include="K19Context.cs" />
-    <Compile Include="ListaAluno.cs" />
-    <Compile Include="Professor.cs" />
-    <Compile Include="RemoveAluno.cs" />
-    <Compile Include="Teste.cs" />
+    <Compile Include="CadastroEditora.cs" />
+    <Compile Include="Editora.cs" />
+    <Compile Include="K21Context.cs" />
+    <Compile Include="k21EditoraRepositorio.cs" />
+    <Compile Include="Livro.cs" />
+    <Compile Include="Migrations\201502231903329_InitialCreate.cs" />
+    <Compile Include="Migrations\201502231903329_InitialCreate.Designer.cs">
+      <DependentUpon>201502231903329_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502231915522_AdicionandoTelefoneEditora.cs" />
+    <Compile Include="Migrations\201502231915522_AdicionandoTelefoneEditora.Designer.cs">
+      <DependentUpon>201502231915522_AdicionandoTelefoneEditora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502232017134_CreateLivro.cs" />
+    <Compile Include="Migrations\201502232017134_CreateLivro.Designer.cs">
+      <DependentUpon>201502232017134_CreateLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502232023022_DesabilitarPluralizing.cs" />
+    <Compile Include="Migrations\201502232023022_DesabilitarPluralizing.Designer.cs">
+      <DependentUpon>201502232023022_DesabilitarPluralizing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502232024184_AjusteNomeTabela.cs" />
+    <Compile Include="Migrations\201502232024184_AjusteNomeTabela.Designer.cs">
+      <DependentUpon>201502232024184_AjusteNomeTabela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Turma.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 4.5</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
+    <EmbeddedResource Include="Migrations\201502231903329_InitialCreate.resx">
+      <DependentUpon>201502231903329_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502231915522_AdicionandoTelefoneEditora.resx">
+      <DependentUpon>201502231915522_AdicionandoTelefoneEditora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502232017134_CreateLivro.resx">
+      <DependentUpon>201502232017134_CreateLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502232023022_DesabilitarPluralizing.resx">
+      <DependentUpon>201502232023022_DesabilitarPluralizing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502232024184_AjusteNomeTabela.resx">
+      <DependentUpon>201502232024184_AjusteNomeTabela.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
