@@ -10,15 +10,13 @@ namespace CustomizandoCodeFirstMigrations
         static void Main(string[] args)
         {
 
-            //Página 76
-
             RepositorioPessoa repositorio;
             Console.Write("Digite 1 para listar as Pessoas cadastradas ou qualquer outra tecla para cadastrar nova pessoa:");
             string teclaDigitada= Console.ReadLine();
 
             if (teclaDigitada.Equals("1"))
             {
-                 repositorio= new RepositorioPessoa(new kContext());
+                 repositorio= new RepositorioPessoa();
 
                 foreach (var pessoa in repositorio.Listar())
                 {
@@ -27,7 +25,7 @@ namespace CustomizandoCodeFirstMigrations
             }
             else
             {
-                repositorio = new RepositorioPessoa(new kContext());
+                repositorio = new RepositorioPessoa();
                 string nome, cel, email, fone;
                 
                 Console.WriteLine("Digite o nome da pessoa:");
@@ -45,8 +43,6 @@ namespace CustomizandoCodeFirstMigrations
                 Pessoa p = new Pessoa() { Nome = nome, Celular = cel, Email = email, TelefoneFixo = fone };
                 repositorio.Adicionar(p);
             }
-            
-
             
             Console.ReadKey();
         }

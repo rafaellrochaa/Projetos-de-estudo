@@ -5,11 +5,7 @@ using System.Text;
 
 namespace CodeFirstMigrations
 {
-    class Program
+    public interface ILivroRepositorio : IRepositorio<Livro>
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }

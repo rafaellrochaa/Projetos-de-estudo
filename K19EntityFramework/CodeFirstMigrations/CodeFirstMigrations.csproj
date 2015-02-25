@@ -53,9 +53,14 @@
   <ItemGroup>
     <Compile Include="CadastroEditora.cs" />
     <Compile Include="Editora.cs" />
+    <Compile Include="EditoraRepositorio.cs" />
+    <Compile Include="IEditoraRepositorio.cs" />
+    <Compile Include="ILivroRepositorio.cs" />
+    <Compile Include="IRepositorio.cs" />
     <Compile Include="K21Context.cs" />
     <Compile Include="k21EditoraRepositorio.cs" />
     <Compile Include="Livro.cs" />
+    <Compile Include="LivroRepositorio.cs" />
     <Compile Include="Migrations\201502231903329_InitialCreate.cs" />
     <Compile Include="Migrations\201502231903329_InitialCreate.Designer.cs">
       <DependentUpon>201502231903329_InitialCreate.cs</DependentUpon>
@@ -77,8 +82,9 @@
       <DependentUpon>201502232024184_AjusteNomeTabela.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio.cs" />
+    <Compile Include="ServicoCadastroEditora.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

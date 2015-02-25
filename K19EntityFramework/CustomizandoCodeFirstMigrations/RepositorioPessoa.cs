@@ -8,16 +8,16 @@ namespace CustomizandoCodeFirstMigrations
 {
     public class RepositorioPessoa
     {
-        public DbContext context { get; set; }
+        public kContext context { get; set; }
 
-        public RepositorioPessoa(DbContext context)
+        public RepositorioPessoa()
         {
-            this.context = context;
+            context = new kContext();
         }
 
         public void Adicionar(Pessoa p)
         {
-            context.Set<Pessoa>().Add(p);
+            context.Pessoas.Add(p);
             context.SaveChanges();
         }
 

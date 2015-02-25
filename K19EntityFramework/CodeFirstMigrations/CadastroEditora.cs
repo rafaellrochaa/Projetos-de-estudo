@@ -8,7 +8,7 @@ namespace CodeFirstMigrations
 {
     public class CadastroEditora
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Digite o nome da Editora: ");
             string nome =  Console.ReadLine();
@@ -19,10 +19,9 @@ namespace CodeFirstMigrations
             string email = Console.ReadLine();
             email = String.IsNullOrEmpty(email) ? null : email;
 
-            Editora e = new Editora() { Email = email, Nome = nome };
+            EditoraRepositorio e = new EditoraRepositorio();
 
-            k21EditoraRepositorio db = new k21EditoraRepositorio(new K21Context());
-            db.Adicionar(e);
+            e.Incluir(new Editora() { Nome = nome, Email = email });
         }
     }
 }
